@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Kumpul Rukun Jelang Ramadhan - RT 006/06</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for Serif & Inter for Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .ornament-border {
+            border: 2px solid #333;
+            position: relative;
+        }
+        .ornament-border::before, .ornament-border::after {
+            content: '✦';
+            position: absolute;
+            background: #0a0a0a;
+            padding: 0 10px;
+            color: #fff;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#333 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+        }
+    </style>
+</head>
+<body class="bg-pattern">
+
+    <!-- Floating Navigation -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full flex gap-8 shadow-2xl transition-all hover:bg-white/20">
+        <a href="#home" class="text-white hover:text-gray-400 transition-colors"><i class="fas fa-home"></i></a>
+        <a href="#acara" class="text-white hover:text-gray-400 transition-colors"><i class="fas fa-calendar-alt"></i></a>
+        <a href="#kegiatan" class="text-white hover:text-gray-400 transition-colors"><i class="fas fa-list-ul"></i></a>
+        <a href="#lokasi" class="text-white hover:text-gray-400 transition-colors"><i class="fas fa-map-marker-alt"></i></a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden border-b border-white/10">
+        <!-- Background Overlay Image (Ramadhan feel) -->
+        <div class="absolute inset-0 opacity-20 z-0">
+             <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=2070" alt="Islamic Pattern" class="w-full h-full object-cover grayscale">
+        </div>
+        
+        <div class="z-10 max-w-4xl" data-aos="fade-up" data-aos-duration="1500">
+            <span class="text-sm tracking-[0.3em] uppercase mb-4 block text-gray-400">Undangan Digital</span>
+            <div class="mb-6 inline-block py-2 px-6 border border-white/30 rounded-full italic text-sm">
+                "Makan duku di bawah pohon kedondong, Warga RT 006/06 Cipadu kumpul dong!"
+            </div>
+            <h1 class="font-serif text-5xl md:text-7xl mb-6 leading-tight">
+                KUMPUL RUKUN<br>
+                <span class="italic font-light">JELANG RAMADHAN</span>
+            </h1>
+            <p class="text-gray-400 tracking-widest text-sm mb-12 uppercase italic">DARI WARGA • OLEH WARGA • UNTUK WARGA</p>
+            <div class="flex justify-center">
+                <div class="w-px h-24 bg-gradient-to-b from-white to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="py-24 px-6 max-w-3xl mx-auto text-center border-b border-white/10">
+        <div data-aos="fade-up">
+            <h2 class="font-serif text-2xl mb-8 italic text-gray-300">Assalamu’alaikum. Halo Bapak, Ibu & Remaja Semua</h2>
+            <p class="text-lg leading-relaxed text-gray-400 font-light">
+                Gak kerasa bulan puasa 2026 tinggal menghitung hari (estimasi 18 Februari). 
+                Biar ibadah kita makin khusyuk dan lingkungan kita makin oke, yuk kita merapat dulu untuk musyawarah santai.
+            </p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="mt-16" data-aos="zoom-in">
+            <p class="text-xs uppercase tracking-widest text-gray-500 mb-6">Menuju Hari Pertemuan</p>
+            <div id="countdown" class="grid grid-cols-4 gap-4 max-w-md mx-auto">
+                <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+                    <span id="days" class="text-3xl block font-serif">00</span>
+                    <span class="text-[10px] uppercase text-gray-500">Hari</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+                    <span id="hours" class="text-3xl block font-serif">00</span>
+                    <span class="text-[10px] uppercase text-gray-500">Jam</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+                    <span id="minutes" class="text-3xl block font-serif">00</span>
+                    <span class="text-[10px] uppercase text-gray-500">Menit</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-lg border border-white/10">
+                    <span id="seconds" class="text-3xl block font-serif">00</span>
+                    <span class="text-[10px] uppercase text-gray-500">Detik</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Detail Section -->
+    <section id="acara" class="py-24 px-6 bg-white text-black relative">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="text-xs uppercase tracking-widest text-gray-500 mb-2 block">Agenda Acara</span>
+                <h3 class="font-serif text-4xl mb-6">Waktu & Tempat</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center border border-black rounded-full shrink-0">
+                            <i class="far fa-calendar"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">Sabtu, 14 Februari 2026</p>
+                            <p class="text-sm text-gray-600">Catat tanggalnya di kalender Anda</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center border border-black rounded-full shrink-0">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">19:30 WIB - Selesai</p>
+                            <p class="text-sm text-gray-600">Ba'da Isya agar lebih santai</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 flex items-center justify-center border border-black rounded-full shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg uppercase">PB Nakula</p>
+                            <p class="text-sm text-gray-600 italic">Area Cipadu, Tangerang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group" data-aos="fade-left">
+                <div class="absolute -inset-4 border-2 border-black/10 group-hover:border-black transition-all duration-500"></div>
+                <img src="https://images.unsplash.com/photo-1590076214537-1df3d3261cd5?auto=format&fit=crop&q=80&w=1000" alt="Meeting Space" class="w-full h-80 object-cover grayscale brightness-75 transition duration-500 group-hover:brightness-100">
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda/Activities Section -->
+    <section id="kegiatan" class="py-24 px-6 border-b border-white/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h3 class="font-serif text-3xl italic mb-4">Agenda Utama</h3>
+                <p class="text-gray-500 text-sm tracking-widest">HAL-HAL YANG AKAN KITA BAHAS</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-4xl mb-6 block text-gray-500 group-hover:text-white transition-colors italic font-serif">01</span>
+                    <h4 class="font-semibold mb-4 text-white uppercase text-sm tracking-wider">Kerja Bakti</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Penentuan Jadwal Kerja Bakti (Biar Lingkungan Makin Kinclong Pas Puasa).</p>
+                </div>
+                <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group" data-aos="fade-up" data-aos-delay="200">
+                    <span class="text-4xl mb-6 block text-gray-500 group-hover:text-white transition-colors italic font-serif">02</span>
+                    <h4 class="font-semibold mb-4 text-white uppercase text-sm tracking-wider">Keamanan</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Atur Strategi Keamanan / Ronda (Biar Rumah Tenang Pas Ditinggal Tarawih).</p>
+                </div>
+                <div class="p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors group" data-aos="fade-up" data-aos-delay="300">
+                    <span class="text-4xl mb-6 block text-gray-500 group-hover:text-white transition-colors italic font-serif">03</span>
+                    <h4 class="font-semibold mb-4 text-white uppercase text-sm tracking-wider">Sosial</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">Rencana Kegiatan Sosial & Kebersamaan Warga Selama Ramadhan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section (Google Maps) -->
+    <section id="lokasi" class="py-24 px-6 bg-black">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h3 class="font-serif text-3xl mb-4">Lokasi Pertemuan</h3>
+                <p class="text-gray-500 mb-8 italic">PB Nakula, Cipadu</p>
+            </div>
+            
+            <div class="w-full h-[400px] rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-white/20 shadow-2xl" data-aos="zoom-in">
+                <!-- Iframe Maps Updated with location from https://maps.app.goo.gl/egwJfT5irmsSGS5W6 -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1964175317373!2d106.72621109999999!3d-6.23781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f0bd5a119853%3A0xc62b66f28469d821!2sGor%20PB%20Nakula!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="mt-8 text-center" data-aos="fade-up">
+                <a href="https://maps.app.goo.gl/egwJfT5irmsSGS5W6" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-directions"></i> Buka di Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RT Message Section -->
+    <section class="py-24 px-6 bg-white text-black">
+        <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+            <i class="fas fa-quote-left text-4xl mb-8 text-gray-300"></i>
+            <p class="text-xl md:text-2xl font-serif italic mb-10 leading-relaxed">
+                "Kehadiran Bapak/Ibu & Remaja sangat kami harapkan, karena ide dan masukan dari warga sangat penting untuk kenyamanan kita Bersama. Gak ada Bapak/Ibu & Remaja acara kurang seru!"
+            </p>
+            <div class="h-px w-20 bg-black mx-auto mb-6"></div>
+            <p class="uppercase tracking-widest font-semibold text-sm">Ketua RT 006/06 Cipadu</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 px-6 text-center border-t border-white/10">
+        <div data-aos="fade-up">
+            <h4 class="font-serif text-3xl italic mb-6">Sampai ketemu di PB Nakula ya!</h4>
+            <p class="text-gray-500 uppercase tracking-[0.4em] text-xs mb-12">Salam Guyub</p>
+            
+            <div class="flex justify-center gap-8 text-gray-600 text-sm mb-16">
+                <span>Warga Rukun</span>
+                <span>•</span>
+                <span>Lingkungan Nyaman</span>
+                <span>•</span>
+                <span>Ibadah Tenang</span>
+            </div>
+
+            <div class="text-[10px] text-gray-700 uppercase tracking-widest">
+                &copy; 2026 Jeri • Made with Respect
+            </div>
+        </div>
+    </footer>
+
+    <!-- Audio Player (Optional Placeholder) -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="musicToggle" class="w-10 h-10 bg-white text-black rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Countdown Timer Logic
+        const targetDate = new Date("Feb 14, 2026 19:30:00").getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<p class='text-white col-span-4'>Acara sedang berlangsung atau sudah selesai.</p>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        };
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Parallax Effect for Scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroText = document.querySelector('#home h1');
+            if (heroText) {
+                heroText.style.transform = `translateY(${scrolled * 0.15}px)`;
+            }
+        });
+
+        // Simple Smooth Scroll for Nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
